@@ -8,12 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var message: String = "Hello, How are you ?"
+    
     var body: some View {
-        VStack {
+        VStack(spacing: 20) {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("Hello, How are you ?")
+            
+            Text(message)
+                .font(.headline)
+            
+            Button(action: {
+                message = "I am great, thank you!"
+            }) {
+                Text("Click Me")
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
         }
         .padding()
     }
